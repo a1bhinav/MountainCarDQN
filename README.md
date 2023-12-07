@@ -1,71 +1,37 @@
-<!--
-title:DQN Mountain Car Deep Reinforcement learning OpenAI gym
-categories: DQN Mountain Car Deep Reinforcement learning OpenAI gym
-description: DQN Mountain Car Deep Reinforcement learning OpenAI gym
-keywords: DQN Mountain Car Deep Reinforcement learning OpenAI gym
+# Project - MountainCar with DQN
 
-<meta name='DQN Mountain Car' content='Deep Reinforcement learning OpenAI gym quick'>  -->
+### Environment   
 
-# A SUPER QUICK way to train Mountain Car using DQN
+Solving the environment require an average total reward of over -110 on 100 consecutive episodes.     
+Training of MountainCar is performed using the __Deep Q-Network (DQN)__ algorithm, see    
+the basic paper [Human-level control through deep reinforcement learning](https://deepmind.com/research/publications/human-level-control-through-deep-reinforcement-learning).   
+We solve the MountainCar environment in **1835 episodes**, in __1.75__ hours.   
+By usage of the Q-learning algorithm, the environment is solved in **283600** episodes in __22 minutes__!   
 
-Reinforcement Learning DQN - using OpenAI gym Mountain Car
+![](/images/two_diagr_mount_car_0.5.png)
 
-- Keras
-- gym
+### Training Score
 
-### The training will be done in at most 6 minutes! (After about 300 episodes the network will converge
+![](/images/plot_MountainCar_1835epis_DQN.png)
 
+### The last few lines from the log
 
+...   
+Episode:  1720 Score: -104.0  Avg.Score: -115.19, eps-greedy: 0.010 Time: 01:38:00     
+Episode:  1730 Score: -112.0  Avg.Score: -115.08, eps-greedy: 0.010 Time: 01:38:17   
+Episode:  1740 Score: -109.0  Avg.Score: -114.50, eps-greedy: 0.010 Time: 01:38:34   
+Episode:  1750 Score: -104.0  Avg.Score: -112.74, eps-greedy: 0.010 Time: 01:38:50   
+Episode:  1760 Score: -91.0  Avg.Score: -111.35, eps-greedy: 0.010 Time: 01:39:06    
+Episode:  1770 Score: -104.0  Avg.Score: -110.76, eps-greedy: 0.010 Time: 01:39:22   
+Episode:  1780 Score: -107.0  Avg.Score: -112.90, eps-greedy: 0.010 Time: 01:39:44   
+Episode:  1790 Score: -104.0  Avg.Score: -112.66, eps-greedy: 0.010 Time: 01:40:01   
+Episode:  1800 Score: -105.0  Avg.Score: -111.67, eps-greedy: 0.010 Time: 01:40:19   
+Episode:  1810 Score: -164.0  Avg.Score: -111.84, eps-greedy: 0.010 Time: 01:40:35    
+Episode:  1820 Score: -107.0  Avg.Score: -110.90, eps-greedy: 0.010 Time: 01:40:50   
+Episode:  1830 Score: -86.0  Avg.Score: -110.42, eps-greedy: 0.010 Time: 01:41:07   
 
-[![DQN](http://img.youtube.com/vi/4kTxLr2NjYY/0.jpg)](http://www.youtube.com/watch?v=4kTxLr2NjYY "DQN")
-
-
-
-The program in the video is running in macOS(Macbook Air) , and it only took 4.1 minutes to finish training. No GPU used.  
-
-## Using GPU
-
-You can use codes:
-
-````python
-import tensorflow as tf
-import keras
-config = tf.ConfigProto( device_count = {'GPU': 2 , 'CPU': 1} ) 
-sess = tf.Session(config=config) 
-keras.backend.set_session(sess)
-````
-
-and change the trainFromBuffer function to **Boost**
-
-````
-#self.trainFromBuffer()
-self.trainFromBuffer_Boost()
-````
-
-I used a workstation to run GPU version. It took about 2mins to finish training.
-
-## How to test
-
-run `testMountainCar.py`
-
-change the file path in 
-
-````
-#load the network
-model=models.load_model('your model filepath')
-````
-
-Then you can see how the car plays the game.
-
-
-
-
-
-
-
-
-
-
-
-
+ Environment solved in 1834 episodes!	Average Score: -109.95    
+ 
+ 
+ 
 
